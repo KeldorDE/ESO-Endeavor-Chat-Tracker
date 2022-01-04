@@ -12,6 +12,14 @@ EndeavorChatTracker.Name = "EndeavorChatTracker"
 ----
 --- Event Functions
 ----
+function EndeavorChatTracker.OnTimedActivityProgressUpdate(_, index, _, currentProgress)
+
+	local name = GetTimedActivityName(index)
+	local maxProgress = GetTimedActivityMaxProgress(index)
+
+	CHAT_SYSTEM:AddMessage(name .. " (|c00C000" .. currentProgress .. " / " .. maxProgress .. "|r)")
+end
+
 
 
 
@@ -23,18 +31,7 @@ function EndeavorChatTracker.OnAddOnLoaded(_, addonName)
 	if addonName ~= EndeavorChatTracker.Name then return end
 
 	EVENT_MANAGER:UnregisterForEvent(EndeavorChatTracker.Name, EVENT_ADD_ON_LOADED)
-
-	EVENT_MANAGER:RegisterForEvent(ChatWindowResizer.Name, EVENT_TIMED_ACTIVITY_PROGRESS_UPDATED, function()
-		CHAT_SYSTEM:AddMessage("EVENT_TIMED_ACTIVITY_PROGRESS_UPDATED")
-	end)
-
-	EVENT_MANAGER:RegisterForEvent(ChatWindowResizer.Name, EVENT_TIMED_ACTIVITIES_UPDATED, function()
-		CHAT_SYSTEM:AddMessage("EVENT_TIMED_ACTIVITIES_UPDATED")
-	end)
-
-	EVENT_MANAGER:RegisterForEvent(ChatWindowResizer.Name, EVENT_TIMED_ACTIVITY_SYSTEM_STATUS_UPDATED, function()
-		CHAT_SYSTEM:AddMessage("EVENT_TIMED_ACTIVITY_SYSTEM_STATUS_UPDATED")
-	end)
+	EVENT_MANAGER:RegisterForEvent(EndeavorChatTracker.Name, EVENT_TIMED_ACTIVITY_PROGRESS_UPDATED, EndeavorChatTracker.OnTimedActivityProgressUpdate)
 end
 
 
