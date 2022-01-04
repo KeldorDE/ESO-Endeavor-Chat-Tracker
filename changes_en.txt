@@ -1,0 +1,2 @@
+# 1.0.0
+- First public version of the Endeavor Chat Tracker AddOn
