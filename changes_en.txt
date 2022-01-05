@@ -1,2 +1,7 @@
+# 1.0.1
+- Test entry 1
+- Test entry 2
+- Test entry 4 /command test
+
 # 1.0.0
 - First public version of the Endeavor Chat Tracker AddOn
