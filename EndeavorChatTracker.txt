@@ -1,10 +1,10 @@
 ## DisableSavedVariablesAutoSaving: 1
-## Title: Endeavor Chat Tracker |c00C000v1.0.0|r
+## Title: Endeavor Chat Tracker |c00C000v1.0.1|r
 ## Description: Tracks the status of your uncompleted Endeavors and prints progress updates to the chat.
 ## Author: |cEFEBBEKeldor|r
-## Version: 1.0.0
-## IntVersion: 1000
-## APIVersion: 101032
+## Version: 1.0.1
+## IntVersion: 1001
+## APIVersion: 101033
 ## SavedVariables: EndeavorChatTrackerSV
 
 EndeavorChatTracker.lua
