@@ -1,3 +1,6 @@
+# 1.0.2
+- Updated API Version to High Isle
+
 # 1.0.1
 - Updated API Version to Ascending Tide
 
